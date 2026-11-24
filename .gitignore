@@ -3,7 +3,15 @@ install/
 log/
 *.pyc
 __pycache__/
-*.bag
-*.db3
 .vscode/
 *.swp
+*.bag
+*.db3
+*.mcap
+*.env
+*.pem
+*.key
+secrets*
+
+# Excluded meshes
+src/robo_description/meshes/
