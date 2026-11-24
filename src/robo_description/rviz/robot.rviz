@@ -1,0 +1,20 @@
+Visualization Manager:
+  Global Options:
+    Fixed Frame: base_link
+    Background Color: 48; 48; 48
+
+  Displays:
+
+    - Class: rviz/Grid
+      Name: Grid
+      Plane: XY
+      Cell Size: 1
+
+    - Class: rviz/RobotModel
+      Name: RobotModel
+      Robot Description: robot_description
+      Visual Enabled: true
+
+    - Class: rviz/TF
+      Name: TF
+      Enabled: true

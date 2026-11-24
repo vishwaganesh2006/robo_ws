@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<robot name="robo_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- MATERIAL -->
+  <material name="silver">
+    <color rgba="0.75 0.75 0.75 1"/>
+  </material>
+
+  <!-- ================= GAZEBO PLUGIN ================= -->
+  <gazebo>
+    <plugin
+      filename="libgz_ros2_control-system.so"
+      name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+
+      <parameters>/home/vishwa/robo_ws/src/robo_description/config/controllers.yaml</parameters>
+
+    </plugin>
+  </gazebo>
+
+  <!-- ================= ROS2 CONTROL ================= -->
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    
+    <joint name="joint_1">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="joint_2">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="joint_3">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="joint_4">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="joint_5">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="joint_6">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <link name="world"/>
+    <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+
+
+  <!-- ================= BASE ================= -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.04422629485921606 -0.17318046886347913 -0.48243142066468925"/>
+      <mass value="0.5"/>
+      <inertia ixx="2.4124738" iyy="1.7211638" izz="1.7954784"
+               ixy="-0.0871257" ixz="-0.2082077" iyz="-0.2300262"/>
+    </inertial>
+
+    <visual>
+      <geometry>  
+        <mesh filename="package://robo_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= LINK 1 ================= -->
+  <link name="Link_01_1">
+    <inertial>
+      <origin xyz="-0.008671679009742906 -3.204553343326769e-05 0.10619951412288603"/>
+      <mass value="1.2205413831987604"/>
+      <inertia ixx="0.00062364" iyy="0.00063772" izz="0.00044105"
+               ixy="-1.2e-07" ixz="0.00001806" iyz="9e-08"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0 -0.024 0.036"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_01_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 -0.024 0.036"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_01_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= LINK 2 ================= -->
+  <link name="Link_02_1">
+    <inertial>
+      <origin xyz="-0.11337103961502651 0 0.15580690923346416"/>
+      <mass value="0.31640128747584175"/>
+      <inertia ixx="0.00696737" iyy="0.00733067" izz="0.00136225"
+               ixy="0.0" ixz="0.00021677" iyz="8.6e-07"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0.086 -0.024 -0.08095"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_02_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.086 -0.024 -0.08095"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_02_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= LINK 3 ================= -->
+  <link name="Link_03_1">
+    <inertial>
+      <origin xyz="0.0619584154811219 0 0.003136203918107705"/>
+      <mass value="0.07113893929813806"/>
+      <inertia ixx="0.00027995" iyy="0.00028431" izz="0.0001617"
+               ixy="0.0" ixz="-0.00000323" iyz="0.0"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0.1065 -0.024 -0.44695"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_03_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.1065 -0.024 -0.44695"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_03_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= LINK 4 ================= -->
+  <link name="Link_04_1">
+    <inertial>
+      <origin xyz="0.004090868496318387 0 0.14593784444295332"/>
+      <mass value="0.1270626180908928"/>
+      <inertia ixx="0.00082303" iyy="0.00095526" izz="0.00041644"
+               ixy="0.0" ixz="0.00000387" iyz="0.0"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0.0385 -0.024 -0.546322"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_04_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.0385 -0.024 -0.546322"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_04_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= LINK 5 ================= -->
+  <link name="Link_05_1">
+    <inertial>
+      <origin xyz="-0.04561301966001982 0 -0.007041560179979034"/>
+      <mass value="0.039969220004897634"/>
+      <inertia ixx="0.00010608" iyy="0.00009987" izz="0.00006921"
+               ixy="0.0" ixz="-8.8e-07" iyz="4e-08"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0.1305 -0.024 -0.754322"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_05_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.1305 -0.024 -0.754322"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_05_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= LINK 6 ================= -->
+  <link name="Link_06_1">
+    <inertial>
+      <origin xyz="0 0 0.03953115963236653"/>
+      <mass value="0.003207742050288606"/>
+      <inertia ixx="0.00000598" iyy="0.00000599" izz="0.00000303"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0.1855 -0.024 -0.819314"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_06_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.1855 -0.024 -0.819314"/>
+      <geometry>
+        <mesh filename="package://robo_description/meshes/Link_06_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= JOINTS ================= -->
+
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0 0.024 -0.036"/>
+    <parent link="base_link"/>
+    <child link="Link_01_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="120" velocity="1.5"/>
+    <dynamics damping="25.0" friction="8.0"/>
+  </joint>
+
+  <joint name="joint_2" type="revolute">
+    <origin xyz="-0.086 0 0.11695"/>
+    <parent link="Link_01_1"/>
+    <child link="Link_02_1"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="-2.5" upper="2.5" effort="220" velocity="1.0"/>
+    <dynamics damping="40.0" friction="12.0"/>
+  </joint>
+
+  <joint name="joint_3" type="revolute">
+    <origin xyz="-0.0205 0 0.366"/>
+    <parent link="Link_02_1"/>
+    <child link="Link_03_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.5" upper="2.5" effort="180" velocity="1.0"/>
+    <dynamics damping="35.0" friction="10.0"/>
+  </joint>
+
+  <joint name="joint_4" type="revolute">
+    <origin xyz="0.068 0 0.099372"/>
+    <parent link="Link_03_1"/>
+    <child link="Link_04_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="1.5"/>
+    <dynamics damping="20.0" friction="6.0"/>
+  </joint>
+
+  <joint name="joint_5" type="revolute">
+    <origin xyz="-0.092 0 0.208"/>
+    <parent link="Link_04_1"/>
+    <child link="Link_05_1"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="-2.5" upper="2.5" effort="80" velocity="1.2"/>
+    <dynamics damping="15.0" friction="5.0"/>
+  </joint>
+
+  <joint name="joint_6" type="revolute">
+    <origin xyz="-0.055 0 0.064992"/>
+    <parent link="Link_05_1"/>
+    <child link="Link_06_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="30" velocity="2.0"/>
+    <dynamics damping="5.0" friction="1.0"/>
+  </joint>
+   
+</robot>  

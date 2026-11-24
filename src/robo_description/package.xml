@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>robo_description</name>
+  <version>0.0.0</version>
+  <description>Robot description package for URDF, Gazebo, and RViz</description>
+
+  <maintainer email="you@example.com">vishwa</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- Build tool -->
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- Runtime dependencies -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <!-- Gazebo / ros2_control -->
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>ros2_control</exec_depend>
+  <exec_depend>ros2_controllers</exec_depend>
+
+  <!-- Export Python build type -->
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+
+</package>

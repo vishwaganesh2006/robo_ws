@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<robot name="robo_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- PLUGIN  -->
+  <gazebo>
+    <plugin name="gz_ros2_control" filename="libgz_ros2_control-system.so">
+      <parameters>/home/vishwa/robo_ws/src/robo_description/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <!-- ================= BASE ================= -->
+  <gazebo reference="base_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <self_collide>false</self_collide>
+    <surface>
+      <contact>
+        <ode/>
+       </contact>
+    </surface>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <!-- ================= LINKS ================= -->
+  <gazebo reference="Link_01_1">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <self_collide>false</self_collide>
+    <surface>
+      <contact>
+        <ode/>
+       </contact>
+    </surface>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <gazebo reference="Link_02_1">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <self_collide>false</self_collide>
+    <surface>
+      <contact>
+        <ode/>
+       </contact>
+    </surface>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <gazebo reference="Link_03_1">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <self_collide>false</self_collide>
+    <surface>
+      <contact>
+        <ode/>
+       </contact>
+    </surface>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <gazebo reference="Link_04_1">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <self_collide>false</self_collide>
+    <surface>
+      <contact>
+        <ode/>
+       </contact>
+    </surface>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <gazebo reference="Link_05_1">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <self_collide>false</self_collide>
+    <surface>
+      <contact>
+        <ode/>
+       </contact>
+    </surface>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <gazebo reference="Link_06_1">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <self_collide>false</self_collide>
+    <surface>
+      <contact>
+        <ode/>
+       </contact>
+    </surface>
+    <gravity>true</gravity>
+  </gazebo>
+
+</robot>
